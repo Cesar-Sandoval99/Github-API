@@ -9,6 +9,7 @@ import NotFound from "./views/NotFound/NotFound";
 
 
 
+
 //Styles 
 import './App.css';
 import Followers from "./views/Followers/Followers";
@@ -20,7 +21,10 @@ function App() {
       <Switch>
         <MainLayout>
           <Route exact path="/" component={Home} />
-          <Route exact path="/followers/:user" component={Home, Followers} />
+          <Route exact path="/followers/:user" >
+            <Home/>
+            <Followers/>
+          </Route>
         </MainLayout>
         <Route path="*" component={NotFound} />
       </Switch>
